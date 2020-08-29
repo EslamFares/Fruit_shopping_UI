@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
               size: 30,
             ),
             onPressed: () {
-              print('setting_homepage');
+              print('setting_home_page');
             }),
         actions: <Widget>[
           IconButton(
@@ -63,7 +63,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.black,
                 size: 30,
               ),
-              onPressed: () {})
+              onPressed: () {
+                print('cart_home_page');
+              })
         ],
       ),
       body: Column(

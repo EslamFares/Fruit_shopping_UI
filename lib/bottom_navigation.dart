@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lesson_8/screens/account.dart';
 import 'package:lesson_8/screens/home.dart';
-import 'package:lesson_8/screens/search.dart';
-import 'widgets/mail.dart';
-import 'screens/notification.dart';
+import 'package:lesson_8/screens/favorite.dart';
+import 'screens/cart.dart';
 
 class BottomNavigatonbar extends StatefulWidget {
   @override
@@ -13,16 +13,17 @@ class _BottomNavigatonbarState extends State<BottomNavigatonbar> {
   int _currentIndex = 0;
   List bodyWidgets = [
     HomeScreen(),
-    SearchScreen(),
-    NotifiactionScreen(),
-    MailScreen(),
+    FavoriteScreen(),
+    CartScreen(),
+    AcountScreen(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(backgroundColor: Colors.white),
       body: bodyWidgets[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.deepOrange,
+        unselectedItemColor: Colors.grey,
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {
@@ -38,19 +39,19 @@ class _BottomNavigatonbarState extends State<BottomNavigatonbar> {
                 style: TextStyle(fontSize: 0),
               )),
           BottomNavigationBarItem(
-              icon: Icon(Icons.search, size: 30),
+              icon: Icon(Icons.favorite, size: 30),
               title: Text(
                 '',
                 style: TextStyle(fontSize: 0),
               )),
           BottomNavigationBarItem(
-              icon: Icon(Icons.notifications, size: 30),
+              icon: Icon(Icons.add_shopping_cart, size: 30),
               title: Text(
                 '',
                 style: TextStyle(fontSize: 0),
               )),
           BottomNavigationBarItem(
-              icon: Icon(Icons.mail_outline, size: 30),
+              icon: Icon(Icons.account_circle, size: 30),
               title: Text(
                 '',
                 style: TextStyle(fontSize: 0),
